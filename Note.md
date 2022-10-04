@@ -447,3 +447,64 @@ v-if在接受true时动态创建该元素，接受false时动态删除该元素�
 v-show在接受true时将元素的display属性设置为block，接受false时将元素的display属性设置为none
 
 v-show适合频繁切换显示/隐藏状态的元素，性能高于v-if，v-if比较消耗性能
+
+
+
+### v-for为什么要加key
+
+为了性能优化。
+
+vue是虚拟dom，在更新dom时要使用diff算法进行比对。
+
+如果没有key，在每次更新dom时都要重新渲染一次页面，性能消耗很大。
+
+如果有key，就可以按照key值对比元素，只需创建新的li元素即可，不需要对其它元素重新进行渲染。
+
+key值不能指定为列表元素的index，因为index不能和元素一对一的绑定。
+
+例如数组[1, 2, 3]，此时1和index0绑定，在数组前插入一个0，则0和index0绑定，且整个数组的index都发生了变化。
+
+
+
+-----
+
+
+
+## 七、Ajax篇
+
+
+
+### 如何创建Ajax
+
+1. 创建XHR对象
+
+   ```JS
+   const xhr = new XMLHttpRequest();
+   ```
+
+2. 请求参数设置
+
+   ```js
+   xhr.open(请求方式, URL)
+   ```
+
+3. 发送请求
+
+   ```JS
+   xhr.send()
+   // get请求不需要参数
+   // post请求需要data参数
+   ```
+
+4. 监听请求成功后的状态变化
+
+   ```JS
+   xhr.onreadystagechange() = function() {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+           console.log(xhr.responseText);
+           xhr = null;
+       }
+   }
+   ```
+
+   
