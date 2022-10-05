@@ -166,6 +166,50 @@ HTML语义化的作用：
 
 
 
+### 定位
+
+css有static、inherit、relative、absolute、fixed、sticky等定位方法
+
+#### static
+
+静态定位。css中的默认定位方法，也就是没有定位。静态定位下top、bottom、right、left、z-index等属性都是无效的。
+
+#### inherit
+
+继承定位。继承父元素的定位方式，若父元素没有定位，则子元素也没有定位。
+
+#### relative
+
+相对定位。相对定位是指相对盒子原有位置进行偏移，**相对定位下的盒子没有脱离标准流**，仍占有原来位置。
+
+#### absolute
+
+绝对定位。绝对定位是指相对外层第一个有定位（非static）的祖先元素进行偏移，**绝对定位的盒子会脱离标准流**。
+
+#### fixed
+
+固定定位。固定定位是指相对浏览器窗口进行偏移（不管滚条怎么滑动），**固定定位的盒子会脱离标准流。**
+
+#### sticky
+
+可以看成是relative和fixed的结合，初始状态为relative，随着浏览器视口的移动，会变成fixed。
+
+它的具体规则是，当页面滚动，父元素开始脱离视口时（即部分不可见），只要与`sticky`元素的距离达到生效门槛，`relative`定位自动切换为`fixed`定位；等到父元素完全脱离视口时（即完全不可见），`fixed`定位自动切换回`relative`定位。
+
+
+
+### Flex布局
+
+Flex布局，全称Flexible Box（弹性盒布局），为盒子模型提供了最大的灵活性。任何一种元素都可以指定Flex布局。
+
+指定方法：使用display: flex、display: inline-flex（行内元素）、display: -webkit-flex;（safari）
+
+#### 容器和项目
+
+采用flex布局的元素称为容器，采用flex布局的子元素称为项目。若父元素采取flex布局，则全部子元素自动成为项目。
+
+
+
 ### 水平/垂直居中方法
 
 
