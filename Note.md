@@ -208,6 +208,63 @@ Flex布局，全称Flexible Box（弹性盒布局），为盒子模型提供了�
 
 采用flex布局的元素称为容器，采用flex布局的子元素称为项目。若父元素采取flex布局，则全部子元素自动成为项目。
 
+#### 轴
+
+默认存在两根轴，水平主轴main axis和垂直交叉轴cross axis，主轴开始位置叫main start，结束位置叫main end；交叉轴开始位置叫cross start，结束位置叫cross end，项目默认按照主轴排列。
+
+#### 容器属性
+
+**flex-direct：容器主轴的方向**
+
+* row：默认值，沿水平方向，从左到右
+* row-reverse：沿水平方向，从右到左
+* column：沿垂直方向，从上到下
+* column-reverse：沿垂直方向，从下到上
+
+**flex-wrap：设置项目一行无法显示时该如何处理**
+
+* nowrap：表示不换行（此时项目宽度失效，强制在一行显示）
+* wrap：正常换行，第一个位于第一行的第一个
+* wrap-reverse：向上换行，第一个位于最后一行的第一个
+
+**flex-flow：flex- direction和flex-wrap的结合，**
+
+默认值为row nowrap，第一个值为direction属性，第二个值为wrap属性
+
+**justify-content：设置项目在容器中的对齐方式**
+
+* flex-start：默认值，左对齐
+* flex-end：右对齐
+* center：居中对齐
+* space-between：两端对齐
+* space-around：每个项目的间距相等
+
+**align-items：定义项目在交叉轴上是如何对齐的**
+
+* flex-start：交叉轴起点对齐
+* flex-end：交叉轴终点对齐
+* center：交叉轴居中对齐
+* baseline：项目第一行文字基线对齐
+* stretch：项目未设置高度，占满整个容器
+
+**align-content：定义多根轴线是如何对齐的**
+
+#### 项目属性
+
+**order：定义了项目的排列顺序，默认为0，越小排列越靠前。**
+
+**flex-grow：定义项目放大的比例，默认为0.若所有项目均为1，则等分剩余空间。**
+
+**flex-shrink：定义了项目缩小的比例，默认为1，空间不足，该项目缩小**
+
+**flex-basis：在分配多余空间时，项目占据的主轴空间（与width和height类似），默认auto**
+
+**flex：复合写法，顺序为grow、shrink、basis，默认值0 1 auto**
+
+
+
+
+
 
 
 ### 水平/垂直居中方法
